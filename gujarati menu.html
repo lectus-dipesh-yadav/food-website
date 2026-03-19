@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gujarati Menu</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf5;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4d2d;
+            margin-bottom: 40px;
+        }
+
+        .item {
+            display: flex;
+            gap: 20px;
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .item:hover {
+            transform: scale(1.02);
+        }
+
+        .item img {
+            width: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-content h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .item-content p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #ff4d2d;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            background: #ff4d2d;
+            padding: 10px 18px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #e63b1f;
+        }
+
+        .cart-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Gujarati Menu</h1>
+
+    <!-- ITEM 1 -->
+    <div class="item">
+        <img src="images/gujarati thali.jpg">
+        <div class="item-content">
+            <h3>Special Gujarati Thali</h3>
+            <p>
+                A complete traditional Gujarati meal including roti, dal, kadhi, sabzi,
+                farsan, rice, sweets, and buttermilk. Balanced taste of sweet, salty,
+                and spicy flavors.
+            </p>
+            <p class="price">₹360</p>
+            <a href="#" class="btn" onclick="addToCart('Special Gujarati Thali',360)">
+                ADD TO CART
+            </a>
+        </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="item">
+        <img src="images/jalebi fafda.webp">
+        <div class="item-content">
+            <h3>Jalebi Fafda</h3>
+            <p>
+                A famous Gujarati breakfast combo. Crispy fafda served with hot,
+                juicy jalebis and green chutney. Popular especially on Dussehra.
+            </p>
+            <p class="price">₹90</p>
+            <a href="#" class="btn" onclick="addToCart('Jalebi Fafda',90)">
+                ADD TO CART
+            </a>
+        </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="item">
+        <img src="images/khaman.jpg">
+        <div class="item-content">
+            <h3>Khaman</h3>
+            <p>
+                Soft and fluffy steamed snack made from gram flour.
+                Light, healthy, and loved across Gujarat for breakfast or snacks.
+            </p>
+            <p class="price">₹90</p>
+            <a href="#" class="btn" onclick="addToCart('Khaman',90)">
+                ADD TO CART
+            </a>
+        </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="item">
+        <img src="images/thepla.webp">
+        <div class="item-content">
+            <h3>Thepla</h3>
+            <p>
+                A nutritious Gujarati flatbread made with whole wheat flour,
+                methi leaves, and spices. Perfect for travel and daily meals.
+            </p>
+            <p class="price">₹100</p>
+            <a href="#" class="btn" onclick="addToCart('Thepla',100)">
+                ADD TO CART
+            </a>
+        </div>
+    </div>
+
+    <!-- GO TO CART -->
+    <div class="cart-link">
+        <a href="cart.html" class="btn">GO TO CART 🛒</a>
+    </div>
+
+    <!-- CART JS -->
+    <script src="cart.js"></script>
+
+</body>
+
+</html>

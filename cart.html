@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart</title>
+<style>
+body{font-family:Arial;background:#f7f7f7;padding:30px}
+table{width:100%;background:#fff;border-collapse:collapse}
+th,td{padding:12px;border-bottom:1px solid #ddd;text-align:center}
+.total{font-weight:bold}
+button{background:#2e7d32;color:#fff;padding:10px 20px;border:none;border-radius:6px}
+</style>
+</head>
+<body>
+
+<h1>Your Cart</h1>
+
+<table id="cartTable">
+<tr><th>Item</th><th>Qty</th><th>Price</th></tr>
+</table>
+
+<h2 id="total"></h2>
+
+<button onclick="placeOrder()">PLACE ORDER</button>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let table = document.getElementById("cartTable");
+let total = 0;
+
+cart.forEach(i=>{
+    total += i.price * i.qty;
+    table.innerHTML += `<tr>
+        <td>${i.name}</td>
+        <td>${i.qty}</td>
+        <td>₹${i.price * i.qty}</td>
+    </tr>`;
+});
+
+document.getElementById("total").innerText = "Total Bill: ₹" + total;
+
+function placeOrder(){
+    localStorage.removeItem("cart");
+    window.location.href="order-success.html";
+}
+</script>
+
+</body>
+</html>

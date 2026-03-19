@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Punjabi Menu</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf5;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4d2d;
+            margin-bottom: 40px;
+        }
+
+        /* CART BOX */
+        .cart-box {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            background: white;
+            padding: 12px 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
+            text-align: center;
+        }
+
+        .cart-box a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #ff4d2d;
+            font-weight: bold;
+        }
+
+        .cart-total {
+            color: #333;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* MENU ITEM */
+        .item {
+            display: flex;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+        }
+
+        .item img {
+            width: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .item:hover img {
+            transform: scale(1.08);
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-content h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .item-content p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .price {
+            color: #ff4d2d;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            background: #ff4d2d;
+            padding: 10px 18px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e63e22;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CART -->
+    <div class="cart-box">
+        <a href="cart.html">🛒 Cart (<span id="cartCount">0</span>)</a>
+        <div class="cart-total">₹ <span id="cartTotal">0</span></div>
+    </div>
+
+    <h1>Punjabi Menu</h1>
+
+    <!-- ITEM 1 -->
+    <div class="item">
+        <img src="images/punjabi thali.jpg">
+        <div class="item-content">
+            <h3>SP. Punjabi Thali</h3>
+            <p>
+                A complete Punjabi platter showcasing rich gravies, breads,
+                dal and traditional accompaniments.
+            </p>
+            <p class="price">₹160</p>
+            <a href="#" class="btn" onclick="addToCart('Punjabi Thali',160)">ADD TO CART</a>
+        </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="item">
+        <img src="images/chole bhature.jpg">
+        <div class="item-content">
+            <h3>Chole Bhature</h3>
+            <p>
+                Spicy chickpea curry served with fluffy deep-fried bhature,
+                a Punjabi street food classic.
+            </p>
+            <p class="price">₹120</p>
+            <a href="#" class="btn" onclick="addToCart('Chole Bhature',120)">ADD TO CART</a>
+        </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="item">
+        <img src="images/paneer tikka.jpg">
+        <div class="item-content">
+            <h3>Paneer Tikka</h3>
+            <p>
+                Marinated paneer cubes grilled to perfection,
+                served with mint chutney.
+            </p>
+            <p class="price">₹100</p>
+            <a href="#" class="btn" onclick="addToCart('Paneer Tikka',100)">ADD TO CART</a>
+        </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="item">
+        <img src="images/maize chapati and mustard veg.jpg">
+        <div class="item-content">
+            <h3>Makki Roti & Sarson Veg</h3>
+            <p>
+                Traditional Punjabi winter dish made with maize roti
+                and mustard greens.
+            </p>
+            <p class="price">₹100</p>
+            <a href="#" class="btn" onclick="addToCart('Makki Roti & Sarson Veg',100)">ADD TO CART</a>
+        </div>
+    </div>
+
+    <!-- CART JS -->
+    <script src="cart.js"></script>
+
+</body>
+</html>
